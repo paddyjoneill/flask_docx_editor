@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+Load Template File
+{% endblock %}
+
+{% block content %}
+<h2>Load Template</h2>
+<form method=post enctype=multipart/form-data>
+    <input type=file name=file>
+    <input type=submit value=Upload>
+</form>
+<p>Loaded file: {{ file }}</p>
+
+<button><a href=/download>Download</a></button>
+{% endblock %}
