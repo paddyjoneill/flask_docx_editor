@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+Add Replacement
+{% endblock %}
+
+{% block content %}
+<form action="/addreplacement" method='POST'>
+    <label>key #</label>
+    <input type="text" name="key" id="key" value="{{ keytoupdate }}">
+    <br><br>
+    <label>value</label>
+    <input type="text" name="value" id="value" value="{{ replacements[keytoupdate] }}">
+    <br><br>
+    <input type="submit" value="Add Value">
+    
+</form>
+{% for replacement in replacements %}
+<p>#{{ replacement }} - {{ replacements[replacement] }} <a href="/update/{{ replacement }}">Update</a> - <a href="/delete/{{ replacement }}">Delete</a></p>
+{% endfor %}
+{% endblock %}
